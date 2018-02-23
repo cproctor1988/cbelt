@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="~/css/style.css"/>
+
+<h1>@Model.Title</h1>
+    <h3>@Model.EventCord</h3>
+<p>@Model.Description</p>
+<h4>Participants:</h4>
+@foreach(var g in Model.Guests){
+    
+    <p>@g.UserId</p>
+    }
+    
+    @{ 
+    var list = Model.getUsers();
+    if(@Model.UserId == ViewBag.user){
+    <form action="Delete" method="POST">
+        <Input type="hidden" name="activity1" value="@Model.ActivityId">
+        <Input type="hidden" name="user1" value="@ViewBag.user">
+        <Input type="Submit" value="Delete">
+    </form>
+    }else if(list.Contains(@ViewBag.user)){
+        <form action="Unreserve" method="POST" >
+        <Input type="hidden" name="activity1" value="@Model.ActivityId">
+        <Input type="hidden" name="user1" value="@ViewBag.user">
+        <Input type="Submit" value="Leave">
+    </form>
+    }else{
+        <form action="Reserve" method="POST" >
+        <Input type="hidden" name="activity1" value="@Model.ActivityId">
+        <Input type="hidden" name="user1" value="@ViewBag.user">
+        <Input type="Submit" value="Join">
+    </form>
+    }
+    }
+    
+
+
+
+

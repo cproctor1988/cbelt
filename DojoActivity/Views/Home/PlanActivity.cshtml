@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="~/css/style.css"/>
+@model DojoActivity.Models.Activity
+
+@{
+    ViewData["Title"] = "New Activity";
+}
+<form asp-action="CreateActivity" method="post">
+    <label asp-for="Title"></label>
+    <input asp-for="Title"/><br>
+    <label asp-for="Date"></label>
+    <input asp-for="Date"/><br>
+    <label asp-for="Duration"></label>
+    <input asp-for="Duration"/><br>
+    <label asp-for="DurationType"></label>
+    <input asp-for="DurationType"/><br>
+    <label asp-for="Description"></label>
+    <input asp-for="Description"/><br>
+    <input type="hidden" asp-for="UserId" value="@ViewBag.userId">
+    <button type="submit">Create</button>
+</form>

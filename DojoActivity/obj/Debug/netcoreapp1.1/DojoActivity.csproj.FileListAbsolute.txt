@@ -1,0 +1,8 @@
+C:\Users\Cameron\C#\DojoActivity\bin\Debug\netcoreapp1.1\DojoActivity.deps.json
+C:\Users\Cameron\C#\DojoActivity\bin\Debug\netcoreapp1.1\DojoActivity.runtimeconfig.json
+C:\Users\Cameron\C#\DojoActivity\bin\Debug\netcoreapp1.1\DojoActivity.runtimeconfig.dev.json
+C:\Users\Cameron\C#\DojoActivity\bin\Debug\netcoreapp1.1\DojoActivity.dll
+C:\Users\Cameron\C#\DojoActivity\bin\Debug\netcoreapp1.1\DojoActivity.pdb
+C:\Users\Cameron\C#\DojoActivity\obj\Debug\netcoreapp1.1\DojoActivity.AssemblyInfo.cs
+C:\Users\Cameron\C#\DojoActivity\obj\Debug\netcoreapp1.1\DojoActivity.dll
+C:\Users\Cameron\C#\DojoActivity\obj\Debug\netcoreapp1.1\DojoActivity.pdb

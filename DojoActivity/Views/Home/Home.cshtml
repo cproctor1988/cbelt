@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="~/css/style.css"/>
+<h3>Welcome @Model.FirstName! </h3>
+<link rel="stylesheet" href="~/css/style.css"/>
+<table>
+    <thead>
+        
+        <th>Activity</th>
+        <th>Date and Time</th>
+        <th>Duration</th>
+        <th>Event Coordinator</th>
+        <th>Number of Participants</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        @{foreach(var a in ViewBag.activities){
+            
+            var list = a.getUsers();
+            <tr></tr>
+            <td>
+                <form action="Activity/@a.ActivityId" method="GET">
+                    
+                    <Input type="hidden" name="user1" value="@Model.userId">
+                    <Input type="Submit" value="@a.Title">
+                </form>
+            </td>
+            
+            <td>@a.Date</td>
+            <td>@a.Duration @a.DurationType</td>
+            <td>@a.UserId</td>
+            <td>@a.Guests.Count</td>
+            if(@a.UserId == Model.userId){
+                <td>
+                    <form action="Delete" method="POST">
+                        <Input type="hidden" name="activity1" value="@a.ActivityId">
+                        <Input type="hidden" name="user1" value="@Model.userId">
+                        <Input type="Submit" value="Delete">
+                    </form>
+                </td>}
+            
+            else if(list.Contains(@Model.userId))
+            {
+                <td>
+                    <form action="Unreserve" method="POST">
+                        <Input type="hidden" name="activity1" value="@a.ActivityId">
+                        <Input type="hidden" name="user1" value="@Model.userId">
+                        <Input type="Submit" value="Leave">
+                    </form>
+                </td>
+            }else{
+                <td>
+                    <form action="Reserve" method="POST">
+                        <Input type="hidden" name="activity1" value="@a.ActivityId">
+                        <Input type="hidden" name="user1" value="@Model.userId">
+                        <Input type="Submit" value="Join">
+                    </form>
+                </td>
+            }
+            
+        }
+        }
+    </tbody>
+</table>
+
+<form action="New/@Model.userId">
+    <input type="submit" value="Add New Activity">
+</form>

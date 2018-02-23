@@ -1,0 +1,35 @@
+﻿<link rel="stylesheet" href="~/css/style.css"/>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model DojoActivity.Models.RegisterViewModel
+<h2>Welcome To the Dojo Activity Center</h2>
+ 
+<form asp-action="Register" method="post">
+    <span asp-validation-for="FirstName"></span>
+    <label asp-for="FirstName"></label>
+    <input asp-for="FirstName"/><br>
+    <span asp-validation-for="LastName"></span>
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName"/><br>
+    <span asp-validation-for="Email"></span>
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/><br>
+    <span asp-validation-for="Password"></span>
+    <label asp-for="Password"></label>
+    <input asp-for="Password"/><br>
+    <label asp-for="PasswordConfirmation"></label>
+    <input asp-for="PasswordConfirmation"/><br>
+    <button type="submit">Create new User</button>
+</form>
+
+@{
+    <h3>@ViewBag.error</h3>
+} 
+<form asp-action="Login" method="post">
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/>
+    <label asp-for="Password"></label>
+    <input asp-for="Password"/>
+    <button type="submit">Login</button>
+</form>
